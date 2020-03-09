@@ -14,14 +14,17 @@ class TodoForm extends React.Component {
     }
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.addTask(this.state.text);
-        this.setState({ text: ' '});
+        if (this.state.text) {
+            this.props.addTask(this.state.text);
+            this.setState({ text: ' '});
+        }
     }
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
                 <input type='text' value={this.state.text} onChange={this.handleChange} placeholder='New task'/>
                 <button type='submit'>Add Task</button>
+                <button type='button' onClick={this.props.deleteCompleted}>Delete Completed</button>
             </form>
         )
     }

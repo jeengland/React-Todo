@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Todo from './Todo';
+
 class TodoList extends React.Component {
     render() {
         return (
@@ -7,7 +9,7 @@ class TodoList extends React.Component {
                 <ul>
                     {this.props.tasks.map((task) => {
                         return (
-                            <li key={task.id} className={task.completed ? 'completed' : 'uncompleted'}>{task.task}</li>
+                            <Todo task={task} toggleCompleted={this.props.toggleCompleted}/>
                         )
                     })}
                 </ul>
