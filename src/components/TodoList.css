@@ -1,0 +1,13 @@
+h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: black 1px solid;
+    min-height: 60vh;
+    padding: 8%;
+}
