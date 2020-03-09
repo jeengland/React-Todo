@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './TodoForm.css'
+
 class TodoForm extends React.Component {
     constructor() {
         super();
@@ -24,7 +26,7 @@ class TodoForm extends React.Component {
             <form onSubmit={this.handleSubmit}>
                 <input type='text' value={this.state.text} onChange={this.handleChange} placeholder='New task'/>
                 <button type='submit'>Add Task</button>
-                <button type='button' onClick={this.props.deleteCompleted}>Delete Completed</button>
+                <button type='button' onClick={this.props.deleteCompleted} disabled={!this.props.tasks.filter((task) => task.completed).length}>Delete Completed</button>
             </form>
         )
     }

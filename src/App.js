@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './App.css'
+
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 
@@ -17,7 +19,7 @@ class App extends React.Component {
       completed: false,
     }
     this.setState({
-      tasks: [...this.state.tasks, newTask]
+      tasks: [...this.state.tasks, newTask],
     });
   }
   toggleCompleted = (clicked) => {
@@ -31,18 +33,18 @@ class App extends React.Component {
         } else {
           return task;
         }
-      })
+      }),
     })
   }
   deleteCompleted = () => {
     this.setState({
-      tasks: this.state.tasks.filter((task) => !task.completed)
+      tasks: this.state.tasks.filter((task) => !task.completed),
     })
   }
   render() {
     return (
       <div>
-        <TodoForm addTask={this.addTask} deleteCompleted={this.deleteCompleted}/>
+        <TodoForm addTask={this.addTask} deleteCompleted={this.deleteCompleted} tasks={this.state.tasks}/>
         <TodoList tasks={this.state.tasks} toggleCompleted={this.toggleCompleted}/>
       </div>
     );
