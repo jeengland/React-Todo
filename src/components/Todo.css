@@ -1,0 +1,9 @@
+li {
+    font-size: 2rem;
+    margin-bottom: 1%;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
